@@ -1,0 +1,7 @@
+{
+	"graphite": {
+		"host": "ec2-54-195-205-175.eu-west-1.compute.amazonaws.com",
+		"port": 2003,
+		"webPort": 80
+	}
+}

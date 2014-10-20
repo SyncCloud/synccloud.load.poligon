@@ -1,0 +1,16 @@
+extends layout
+
+block nav
+  ol.breadcrumb
+    li.active Reports
+
+block js
+    script
+      include:coffeescript index.coffee
+
+block body
+    ul(data-bind='foreach: reports')
+      li
+        a(data-bind="attr: { href:'/report/'+_id }, text: name")
+        span.label.label-default(data-bind="text: appVersion")
+        button(data-bind="click: remove") Remove

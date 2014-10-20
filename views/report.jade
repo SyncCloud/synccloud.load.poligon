@@ -1,0 +1,21 @@
+extends layout
+
+block nav
+  ol.breadcrumb
+    li
+      a(href="/") Reports
+    li.active=report.name
+
+block js
+    script
+      include:coffeescript graphite-charts.coffee
+      include:coffeescript report.coffee
+
+block body
+    ul.report-versions
+      each rep in versions
+        li
+          a(href='/reports/'+rep._id)=rep.appVersion
+    a(href='/compare/'+versionsIds.join(',')) Compare all
+    .graphite-charts(data-host=graphite.host, data-web-port=graphite.webPort, data-start-time=report.startTimestamp, data-end-time=report.endTimestamp, data-prefix='one_sec.yandex_tank')
+

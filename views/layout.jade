@@ -1,0 +1,33 @@
+doctype html
+
+html
+  head
+    link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css')
+    block css
+    script(src='/vendor/jquery/dist/jquery.js')
+    script(src='/vendor/highcharts/highcharts.js')
+    script(src='/vendor/bootstrap/dist/js/bootstrap.js')
+    script(src='/vendor/knockout/dist/knockout.js')
+    block js
+
+  body(data-model=reports)
+    nav.navbar.navbar-default.navbar-static-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-8')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #bs-example-navbar-collapse-8.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='/') Reports
+            li
+              a(href='/rps') RPS
+            li
+              a(href='/regression') Regression
+    .container
+      block nav
+      block body
+

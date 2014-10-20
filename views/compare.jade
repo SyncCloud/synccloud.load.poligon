@@ -1,0 +1,21 @@
+extends layout
+
+block nav
+  ol.breadcrumb
+    li
+      a(href="/") Reports
+    li.active=report.name
+
+block js
+  script
+    include:coffeescript graphite-charts.coffee
+    include:coffeescript report.coffee
+
+block body
+  ul.report-versions
+    each rep in versions
+      li
+        a(href='/reports/'+rep._id)=rep.appVersion
+  a(href='/regression/'+report.name) Watch regression
+  .graphite-charts(data-graphite=graphite)
+
