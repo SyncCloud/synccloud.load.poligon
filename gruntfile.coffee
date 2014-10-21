@@ -29,6 +29,12 @@ module.exports = (grunt) ->
           'static/dist/report.js': ['static/js/report.js']
           'static/dist/compare.js': ['static/js/compare.js']
 
+    nodemon:
+      app:
+        script: 'app.coffee',
+        ext: 'js,coffee',
+        ignore: ['node_modules/**']
+
     coffeeify:
       main:
         options:

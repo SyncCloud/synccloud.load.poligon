@@ -1,4 +1,4 @@
-charts = require "./graphite-charts.coffee"
+charts = require "./graphite-charts"
 
 templates = [
     name: 'CPU Utilization'

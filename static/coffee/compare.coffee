@@ -1,9 +1,10 @@
-charts = require "./graphite-charts.coffee"
+charts = require "./graphite-charts"
 
 templates = [
   name: 'RPS',
   metric: "one_sec.yandex_tank.overall.RPS"
 ]
+
 
 $(document).ready -> 
   $chartsContainer = $('.graphite-charts')
