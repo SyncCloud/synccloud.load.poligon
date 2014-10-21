@@ -1,0 +1,22 @@
+{
+  "name": "poligon",
+  "version": "0.0.0",
+  "authors": [
+    "Nick Delitski <ndelitski@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "highcharts": "~4.0.4",
+    "knockout": "~3.2.0",
+    "underscore": "~1.7.0"
+  }
+}

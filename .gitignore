@@ -9,4 +9,5 @@ settings.json
 #bower components
 bower_components
 static/vendor
-static/dest
+static/dist
+static/js

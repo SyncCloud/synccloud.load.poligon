@@ -5,8 +5,7 @@ block nav
     li.active Reports
 
 block js
-    script
-      include:coffeescript index.coffee
+    script(src="/dist/index.js")
 
 block body
     ul(data-bind='foreach: reports')

@@ -36,10 +36,10 @@ router.route "/report"
 
 router.get "/compare/:ids", (req, res, next) ->
   ids = req.params.ids.split(',')
-  ReportModel.find id: ids, (err, reports) ->
+  ReportModel.find _id: {$in: ids}, (err, reports) ->
     if err then next err
     else res.render 'compare.jade',
-      tests: reports.map (r) -> r.toObject()
+      targets: reports.map (r) -> r.toObject()
       graphite: config.graphite
 
 module.exports = router

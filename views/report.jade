@@ -7,9 +7,7 @@ block nav
     li.active=report.name
 
 block js
-    script
-      include:coffeescript graphite-charts.coffee
-      include:coffeescript report.coffee
+    script(src="/dist/report.js")
 
 block body
     ul.report-versions
