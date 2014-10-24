@@ -4,12 +4,36 @@ block nav
   ol.breadcrumb
     li.active Reports
 
+block css
+  style
+    include:less ../static/less/index.less
+
 block js
-    script(src="/dist/index.js")
+  script(src="/dist/index.js")
 
 block body
-    ul(data-bind='foreach: reports')
+    ul(data-bind='foreach: reportsByDate')
       li
-        a(data-bind="attr: { href:'/report/'+_id }, text: name")
-        span.label.label-default(data-bind="text: appVersion")
-        button(data-bind="click: remove") Remove
+        h6(data-bind='text: date')
+        ul.reports(data-bind='foreach: reports')
+          li.report
+            .panel.panel-default
+              .panel-body
+                h3.panel-title
+                  a(data-bind="attr: { href:'/report/'+_id }, text: name")
+                  span.time(data-bind="text: moment(startTimestamp).format('hh:mm')")
+                  span.load(data-bind="text: $data.rpsSchedule")
+                p.desc(data-bind="text: description")
+                dl.infrastructure
+                  dt Backend
+                  dd(data-bind="text: infrastructure.backend.count+' x '+infrastructure.backend.type")
+                  dt Database
+                  dd(data-bind="text: infrastructure.db")
+                  dt Tank
+                  dd(data-bind="text: infrastructure.tank")
+
+                button.delete.btn.btn-default(data-bind="click: $root.remove") Remove
+
+            
+            
+           

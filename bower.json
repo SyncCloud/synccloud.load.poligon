@@ -17,6 +17,8 @@
     "bootstrap": "~3.2.0",
     "highcharts": "~4.0.4",
     "knockout": "~3.2.0",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "moment": "~2.8.3",
+    "reset-css": "~2.0.20110126"
   }
 }

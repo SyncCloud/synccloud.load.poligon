@@ -2,6 +2,7 @@ doctype html
 
 html
   head
+    link(rel='stylesheet', href='/vendor/reset-css/reset.css')
     link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css')
     block css
     script(src='/vendor/jquery/dist/jquery.js')
@@ -9,6 +10,7 @@ html
     script(src='/vendor/highcharts/highcharts.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.js')
     script(src='/vendor/knockout/dist/knockout.js')
+    script(src='/vendor/moment/moment.js')
     block js
 
   body(data-model=reports)
