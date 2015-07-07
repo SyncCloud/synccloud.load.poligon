@@ -1,0 +1,24 @@
+{
+    "name": "/api/employees/:id",
+    "description": "Getting employee profile",
+    "load": "line(160, 1m)",
+    "infrastructure": {
+        "db": "c3.large",
+        "backend": {
+            "count": 1,
+            "type": "c3.large",
+            "cache": "512MB"
+        },
+        "frontend": {
+            "count": 2,
+            "type": "m3.medium"
+        },
+        "tank": "m3.medium"
+    },
+    "appVersion": "1.7.2",
+    "startTimestamp": 1413910156084,
+    "endTimestamp": 1413910205419,
+    "artifacts": {
+        "tankIni": "[phantom]\naddress=ec2-54-170-134-96.eu-west-1.compute.amazonaws.com\nport=80\nrps_schedule=line(1, 70, 40s)\nheaders=[Cookie: .ASPXAUTH=8B2AF9B69B160346CAF41F24ECF82F62BCAD52C27515600B0CC30FE926B1C8A0E26CE0356880C06C02DF6F40DD00DD734F6A4561CAAA064AEF3857CF79779C742FD760FE1CE79156801D1D53F7CBB6DA438F8751]\nuris=/api/employees/1\n[graphite]\naddress=ec2-54-195-205-175.eu-west-1.compute.amazonaws.com\nport=2003\nweb_port=80"
+    }
+}

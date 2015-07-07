@@ -1,0 +1,10 @@
+require 'shelljs/global'
+
+task 'deploy', 'deploy new application version', (options) ->
+  exec "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe PerfCounters.sln"
+  exec "zip -qrj9 ./pkg.zip bin/Debug/*"
+  exec "aws s3 cp ./pkg.zip s3://synccloud-deployments/WindowsStatsToGraphite.zip"
+  rm "./pkg.zip"
+  
+task 'clean', 'clean build artifacts', ->
+  rm '-rf', 'bin', 'obj'

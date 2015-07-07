@@ -1,0 +1,13 @@
+class Logger
+  @logLevel: 'info'
+  _getLogLevel: -> @logLevel or Logger.logLevel
+  _levels: ['info', 'warn', 'error']
+  constructor: (@logLevel) ->
+  _checkLevel: (lvl) -> @_levels.indexOf(lvl) >= @_levels.indexOf(@_getLogLevel())
+  log: (level, args...) -> if @_checkLevel level then console.log args...
+  info: (args...) -> @log 'info', args...
+  warn: (args...) -> @log 'warn', args...
+  error: (args...) -> @log 'error', args...
+
+module.exports = Logger
+  
